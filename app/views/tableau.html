@@ -1,0 +1,20 @@
+<div class="text-center">
+    <h1>Alcootest en ligne avec Angular</h1>
+    <h3><a href="#/home">Retour à l'accueil</a></h3>
+</div>
+<hr>
+
+<div class="row text-center">
+<h3>Tableau des scores</h3>
+
+<table class="table table-bordered table-striped" id="tabScore">
+	<tr>
+		<th class="text-center lead" ng-click="tableau.order('user')"><strong>Utilisateur <span class="caret"></span></strong></th>
+		<th class="text-center lead" ng-click="tableau.order('score')"><strong>Score <span class="caret"></span></strong></th>
+	</tr>
+	<tr ng-repeat="users in tableau.users">
+		<td>{{users.user}}</td>
+		<td ng-class="users.score > 0 ? 'vert' : 'rouge'"><strong>{{users.score}}</strong></td>
+	</tr>
+</table>
+</div>

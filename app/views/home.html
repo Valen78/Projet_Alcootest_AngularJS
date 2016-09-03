@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-6 col-md-push-3 text-center">
+    	<h1>Alcootest en ligne avec Angular</h1>
+    	<h3><a href="#/tableau" ng-hide="home.userData">Tableau des scores</a></h3>
+    </div>
+</div>
+<hr>
+<div class="text-right" ng-show="connecte">
+    <h3>{{home.userData.displayName || userName}} <a class="btn btn-danger" ng-click="home.signOut()">Deconnexion</a></h3>
+</div>
+<div class="row text-center">
+	<h3>Es tu en état de conduire ?</h3>
+
+	<div class="col-md-4 col-md-offset-4" ng-hide="connecte">
+		<div class="alert alert-danger" ng-show="home.authError">
+	      Erreur lors de l'authentification : <i>{{home.authError}}</i>
+	    </div>
+	    <p>Connectes-toi et passes le test !<br/>
+		(Déjà {{home.users.length}} personnes ont répondu)</p>
+		<br/>
+	    <input type="button" class="btn btn-primary btn-lg btn-block" value="Se connecter avec Google" ng-click="home.signWithGoogle()">
+	</div>
+
+	<div class="row text-center lead" ng-show="connecte">
+		<p>Tu sors d'une soirée un peu arrosée et c'est le moment de prendre la voiture. Mais es tu en état de conduire ??</p>
+
+		<p>Don't Worry !! cette petite application va t'aider à déterminer si tu as les idées suffisamment claire et le cerveau assez réactif pour prendre le volant !</p>
+		
+		<p>Une série de 5 questions va suivre, et tu as 7 secondes pour répondre à chacune.</p>
+
+		<p>EN BREF : REPONDS AUX QUESTIONS, ON TE DIRA SI TU ES TROP BOURRE POUR CONDUIRE !!!</p>
+
+		<div class="alert alert-danger lead"><span class="glyphicon glyphicon-warning-sign"></span> Attention cette application web s'inscrit dans un cadre de pur divertissement et ne constitue en aucun cas une autorisation officielle de prendre la route, et ce quelque soit le résultat ! <br/>
+		Le conducteur reste le seul responsable en cas d'accident lié à la consommation abusive d'alccol</div>
+		
+		<div class="checkbox form-group">
+			<input type="checkbox" ng-model="home.box" name="accord" id="accord">
+			<label for="accord">
+				J'ai bien compris que ce test n'est pas officiel et que je suis le seul garant de ma sécurité.
+			</label>
+		</div>
+		<div class="form-group">
+			<a href="#/questions" id="submit" class="btn btn-info btn-lg" ng-show="home.box">Go Go Go !</a>
+		</div>
+	</div>
+</div>

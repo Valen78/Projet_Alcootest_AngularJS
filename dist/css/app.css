@@ -1,0 +1,138 @@
+/*  style.css  */
+/* *********** */
+hr {
+	border: #000000 solid 2px;
+}
+
+th {
+  cursor: pointer;
+}
+
+.rouge {
+  color: #FE1B00;
+}
+
+.vert {
+  color: #16B84E;
+}
+
+.score {
+	margin-top: 40px;
+}
+
+.cadre {
+	border: #000000 solid 2px;
+	padding: 10px;
+	font-size: 24px;
+	line-height: 28px;
+}
+
+.question {
+	width: 700px; 
+	margin: auto;
+}
+
+.question img {
+  width: 150px;
+  height: auto;
+}
+
+/*  Questions  */
+/* *********** */
+#reponses li {
+	list-style: none;
+	text-align: left;
+}
+
+.progressBar {
+	width: 70%; 
+	height: 10px; 
+	margin: 20px auto;
+}
+
+.progress-bar{
+  transition: none;
+}
+
+.progress.active .progress-bar,
+.progress-bar.active {
+  -webkit-animation: progress-bar-stripes 7s ease infinite reverse;
+       -o-animation: progress-bar-stripes 7s ease infinite reverse;
+          animation: progress-bar-stripes 7s ease infinite reverse;
+}
+@-webkit-keyframes progress-bar-stripes {
+  100% {background-color: #16B84E;}/*Vert*/
+  50% {background-color: #FFA500;}/*Orange*/
+  O% {background-color: #FE1B00;}/*Rouge*/
+}
+@-o-keyframes progress-bar-stripes {
+  100% {background-color: #16B84E;}/*Vert*/
+  50% {background-color: #FFA500;}/*Orange*/
+  O% {background-color: #FE1B00;}/*Rouge*/
+}
+@keyframes progress-bar-stripes {
+  100% {background-color: #16B84E;}/*Vert*/
+  50% {background-color: #FFA500;}/*Orange*/
+  O% {background-color: #FE1B00;}/*Rouge*/
+}
+
+/*  Résultat  */
+/* ********** */
+.ok {
+	background-color: #16B84E; 
+	color: #ffffff;
+}
+
+.ko {
+	background-color: #FE1B00; 
+	color: #ffffff;
+}
+
+.message{
+  margin: 20px auto;
+}
+
+/*  Checkbox  */
+/* ********** */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative; 
+  padding-left: 35px; 
+  cursor: pointer;    
+}
+
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 2px;
+  width: 25px; height: 25px; 
+  border: 1px solid #aaa;
+  background: #fff;
+}
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: -4px; left: 2px;
+  font-size: 26px;
+  color: #09ad7e;
+  transition: all .2s;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0; 
+  transform: scale(0); 
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1; 
+  transform: scale(1);
+}
